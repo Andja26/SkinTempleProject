@@ -82,9 +82,9 @@ public class ShoppingPage extends BasePage {
      * Method gets number from shopping cart icon
      */
     public String getNumberFromShoppingCartIcon() {
-     //   sleep(10);
-     //   wait(10);
-        waitForElement(shoppingCartNumber);
+        sleep(10);
+        //   wait(10);
+        // waitForElement(shoppingCartNumber);
         print("getNumberFromShoppingCartIcon");
         return shoppingCartNumber.getText();
 
