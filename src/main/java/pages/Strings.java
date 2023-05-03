@@ -60,6 +60,10 @@ public class Strings {
 
 
 
+    public static final String SORT_BY_PRICE_ASC = "Sortiraj po ceni opadajuće";
+
+
+
 
 
 }

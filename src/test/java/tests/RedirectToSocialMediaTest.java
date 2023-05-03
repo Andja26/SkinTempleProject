@@ -31,6 +31,7 @@ public class RedirectToSocialMediaTest extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             BasePage basepage = new BasePage(driver);
+
             print("2. Click on Instagram icon");
             print("2.a Verify that new tab (Instagram) is open");
             String actualUrl = basepage.clickOnInstagramIcon();
@@ -63,6 +64,7 @@ public class RedirectToSocialMediaTest extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             BasePage basepage = new BasePage(driver);
+
             print("2. Click on Facebook icon");
             print("2.a Verify that new tab (Facebook) is open");
             String actualUrl = basepage.clickOnFacebookIcon();

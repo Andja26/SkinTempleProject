@@ -24,6 +24,9 @@ public class LoginPage extends BasePage {
     @FindBy (xpath = "//a[@href = 'https://www.skintemple.rs/sr/izloguj-se']")
     WebElement signOutOptionLoginField;
 
+    @FindBy (xpath = "//a[@href = 'https://www.skintemple.rs/sr/moj-nalog']")
+    WebElement mojiPodaciLoginField;
+
     @FindBy (xpath = "//span[@class='fa fa-user']")
     WebElement loginIconAfterLoggingIn;
 
@@ -52,7 +55,7 @@ public class LoginPage extends BasePage {
      */
     public void enterTextInEmailField(String text) {
         print("enterTextInEmailField");
-        assert isElementPresent(emailLoginField);
+        assert isElementPresent(emailLoginField) : "Error. Email login field is NOT present";
         emailLoginField.click();
         emailLoginField.sendKeys(text);
     }
@@ -62,7 +65,7 @@ public class LoginPage extends BasePage {
      */
     public void enterTextInPasswordField(String text) {
         print("enterTextInPasswordField");
-        assert isElementPresent(passwordLoginField);
+        assert isElementPresent(passwordLoginField) : "Error. Password login field is NOT present";
         passwordLoginField.click();
         passwordLoginField.sendKeys(text);
     }
@@ -126,7 +129,23 @@ public class LoginPage extends BasePage {
      */
     public boolean isPageLoaded ()  {
         //wait(10);
+        //sleep(5);
         return isElementPresent(signOutOptionLoginField);
     }
+
+
+    /*
+     * Method clicks on a signOutOptionLoginField Login Field
+     */
+    public void clickOnSignOutOptionLoginField (){
+        JSclkElement(driver, signOutOptionLoginField);
+    }
+
+    /*
+     * Method clicks on a Moji Podaci Login Field
+     */
+    public void clickOnMojiPodaci () { JSclkElement(driver, mojiPodaciLoginField);
+    }
+
 
 }

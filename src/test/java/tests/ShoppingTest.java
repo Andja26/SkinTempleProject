@@ -47,7 +47,7 @@ public class ShoppingTest extends BaseTest {
             BasePage basePage = new BasePage(driver);
             print("2. Click on search icon");
             // basePage.wait(15);
-            sleep(10);
+            sleep(5);
             basePage.clickOnSearchIcon();
 
             print("3. Enter name of the item and click on search");
@@ -141,7 +141,7 @@ public class ShoppingTest extends BaseTest {
             BasePage basePage = new BasePage(driver);
             print("2. Click on search icon");
             // basePage.wait(15);
-            sleep(10);
+            sleep(5);
             basePage.clickOnSearchIcon();
 
             print("3. Enter name of the item and click on search");

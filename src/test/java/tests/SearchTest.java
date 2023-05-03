@@ -31,8 +31,10 @@ public class SearchTest extends BaseTest {
 
             print("1. Navigate to www.skintemple.rs");
             BasePage basePage = new BasePage(driver);
+
             print("2. Click on a search icon ");
             basePage.clickOnSearchIcon();
+
             print("3. Click and enter name of item");
             basePage.enterTextAndSearch("krema puzeva sluz");
 

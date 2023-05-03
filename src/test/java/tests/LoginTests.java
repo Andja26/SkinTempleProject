@@ -18,6 +18,10 @@ public class LoginTests extends BaseTest {
      * 3. Enter valid username
      * 4. Enter valid password
      * 5. Click Login button
+     * 6. Click on login icon after logging in
+     * 7. Click on Moji Podaci
+     * 7a. Verify that user is on Moj nalog page
+     *
      *
      * Expected result:
      * Verify that user is logged in
@@ -34,20 +38,37 @@ public class LoginTests extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             LoginPage loginPage = new pages.LoginPage (driver);
+
             print("2. Click on a login icon ");
             loginPage.clickOnLoginIcon();
+
             print("3. Enter valid username");
             loginPage.enterTextInEmailField (username);
+
             print("4. Enter valid password");
             loginPage.enterTextInPasswordField(password);
+
             print("5. Click Login button");
             loginPage.clickLoginButtonLoginField();
-            print("5. Click on login icon after logging in ");
+
+            print("6. Click on login icon after logging in ");
             loginPage.clickOnLogInIconAfterLoggingIn();
-            //   sleep(5);
-            print ("5. Verify that  Odjavi se option is present" );
-            //  loginPage.assertIsIsSignOutOptionPresent();
-            assert loginPage.isPageLoaded() : "User is on a wrong page.";
+//            sleep(5);
+//            print ("5. Verify that  Odjavi se option is present" );
+//            loginPage.assertIsIsSignOutOptionPresent();
+//            loginPage.clickOnSignOutOptionLoginField();
+//            assert loginPage.isPageLoaded() : "User is on a wrong page.";
+            print("7. Click on Moji Podaci ");
+            loginPage.clickOnMojiPodaci();
+
+            print("7a. Verify that user is on Moj nalog page");
+            String actualUrl = driver.getCurrentUrl();
+            assert actualUrl.equals(Strings.MOJ_NALOG_URL) : "User is on a wrong page. " +
+                    Strings.MOJ_NALOG_URL + " Actual "  + actualUrl;
+
+
+
+
 
         } finally {
 
@@ -55,6 +76,9 @@ public class LoginTests extends BaseTest {
         }
 
     }
+
+
+
     /**
      * Login with valid user and invalid password
      * Steps:
@@ -77,15 +101,20 @@ public class LoginTests extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             LoginPage loginPage = new pages.LoginPage (driver);
+
             print("2. Click on a login icon ");
             loginPage.clickOnLoginIcon();
+
             print("3. Enter valid username");
             loginPage.enterTextInEmailField (username);
+
             print("4. Enter invalid password");
             loginPage.enterTextInPasswordField(invalidPassword);
+
             print("5. Click Login button");
             loginPage.clickLoginButtonLoginField();
             sleep(5);
+
             print("5. Verify that error message is shown: Pogrešni podaci za pristup");
             //loginPage.assertIsMsgPogresniPodaciZaPristupIsPresent();
             String actualText = loginPage.getMsgPogresniPodaciZaPristup();
@@ -121,15 +150,20 @@ public class LoginTests extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             LoginPage loginPage = new pages.LoginPage (driver);
+
             print("2. Click on a login icon ");
             loginPage.clickOnLoginIcon();
+
             print("3. Enter valid username");
             loginPage.enterTextInEmailField (Strings.INVALID_USERNAME);
+
             print("4. Enter invalid password");
             loginPage.enterTextInPasswordField(Strings.VALID_PASSWORD);
+
             print("5. Click Login button");
             loginPage.clickLoginButtonLoginField();
-            print("5. Verify that error message is shown: Uneti email nije ispravan!");
+
+            print("5a. Verify that error message is shown: Uneti email nije ispravan!");
             //  loginPage.assertIsErrorMsgUnetiEmailNijeIspravanPresent();
 
             String actualText = loginPage.getMsgUnetiEmailNijeIspravan();
@@ -162,11 +196,14 @@ public class LoginTests extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             LoginPage loginPage = new pages.LoginPage (driver);
+
             print("2. Click on a login icon ");
             loginPage.clickOnLoginIcon();
+
             print("3. Click Login button");
             loginPage.clickLoginButtonLoginField();
-            print("3. Verify that error message is shown: Niste uneli email ");
+
+            print("3a. Verify that error message is shown: Niste uneli email ");
             // loginPage.assertIsErrorMsgNisteUneliEmailPresent();
             String actualText = loginPage.getMsgNisteUneliEmail();
             assert actualText.equals("Niste uneli email") : "Wrong text" +

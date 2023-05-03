@@ -56,7 +56,7 @@ public class BaseTest {
         print("isElementPresent");
         try {
             boolean isPresent=element.isDisplayed();
-            return true;
+            return isPresent;
         }catch (Exception e){
             print ( e.getMessage () );
             print ( "Element is NOT present on page" );

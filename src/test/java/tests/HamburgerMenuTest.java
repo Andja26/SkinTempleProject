@@ -32,8 +32,10 @@ public class HamburgerMenuTest extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             HamburgerMenuPage hamburgerMenuPage = new HamburgerMenuPage(driver);
+
             print("2. Click on hamburger menu");
             hamburgerMenuPage.clickOnHamburgerMenu();
+
             print("3. Click on Nase Price i Trendovi");
             hamburgerMenuPage.clickNasePriceItrendovi();
 
@@ -70,8 +72,10 @@ public class HamburgerMenuTest extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             HamburgerMenuPage hamburgerMenuPage = new HamburgerMenuPage(driver);
+
             print("2. Click on hamburger menu");
             hamburgerMenuPage.clickOnHamburgerMenu();
+
             print("3. Click on O nama");
             hamburgerMenuPage.clickOnama();
 
@@ -107,9 +111,11 @@ public class HamburgerMenuTest extends BaseTest {
         try {
             print("1. Navigate to www.skintemple.rs");
             HamburgerMenuPage hamburgerMenuPage = new HamburgerMenuPage(driver);
+
             print("2. Click on hamburger menu");
             hamburgerMenuPage.clickOnHamburgerMenu();
-            print("3. Click on O nama");
+
+            print("3. Click on Kontakt");
             hamburgerMenuPage.clickKontakt();
 
             String actualUrl = driver.getCurrentUrl();

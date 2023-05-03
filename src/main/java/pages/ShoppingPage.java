@@ -41,17 +41,6 @@ public class ShoppingPage extends BasePage {
 
     //methods
 
-    /**
-     * Method Login with valid credentials
-     */
-
-    public void loginToSkintemple(ChromeDriver driver) {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.clickOnLoginIcon();
-        loginPage.enterTextInEmailField(Strings.VALID_USERNAME);
-        loginPage.enterTextInPasswordField(Strings.VALID_PASSWORD);
-        loginPage.clickLoginButtonLoginField();
-    }
 
     /*
      * Method clicks on a image Puzeva sluz krema
@@ -82,7 +71,7 @@ public class ShoppingPage extends BasePage {
      * Method gets number from shopping cart icon
      */
     public String getNumberFromShoppingCartIcon() {
-        sleep(10);
+        sleep(5);
         //   wait(10);
         // waitForElement(shoppingCartNumber);
         print("getNumberFromShoppingCartIcon");

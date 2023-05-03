@@ -46,7 +46,8 @@ public class HamburgerMenuPage extends BasePage {
      * Method clicks on a "Nase price i trendovi" field
      */
     public void clickNasePriceItrendovi () {
-        isElementPresent(nasePriceItrendovi);
+        waitForElement(nasePriceItrendovi);
+      assert isElementPresent(nasePriceItrendovi) : "Web element nasePriceItrendovi is NOT present";
         JSclkElement(driver, nasePriceItrendovi);
     }
 
@@ -54,7 +55,8 @@ public class HamburgerMenuPage extends BasePage {
      * Method clicks on a "O nama" field
      */
     public void clickOnama () {
-        isElementPresent(oNama);
+        waitForElement(oNama);
+        assert isElementPresent(oNama) : "Web element oNama is NOT present";
         JSclkElement(driver, oNama);
     }
 
@@ -62,7 +64,8 @@ public class HamburgerMenuPage extends BasePage {
      * Method clicks on a "Kontakt" field
      */
     public void clickKontakt () {
-        isElementPresent(kontakt);
+        waitForElement(kontakt);
+        assert  isElementPresent(kontakt) : "Web element Kontakt is NOT present";
         JSclkElement(driver, kontakt);
     }
 

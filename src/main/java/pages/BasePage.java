@@ -55,6 +55,18 @@ public class BasePage {
 
     //Methods
 
+    /**
+     * Method Login with valid credentials
+     */
+
+    public void loginToSkintemple(ChromeDriver driver) {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.clickOnLoginIcon();
+        loginPage.enterTextInEmailField(Strings.VALID_USERNAME);
+        loginPage.enterTextInPasswordField(Strings.VALID_PASSWORD);
+        loginPage.clickLoginButtonLoginField();
+    }
+
     /*
      * Method clicks on a login icon
      */
@@ -159,7 +171,8 @@ public class BasePage {
         print("isElementPresent");
         try {
             boolean isPresent=element.isDisplayed();
-            return true;
+          //  return true;
+            return isPresent;
         }catch (Exception e){
             print ( e.getMessage () );
             print ( "Element is NOT present on page" );
